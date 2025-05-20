@@ -16,8 +16,9 @@ section_ids=$(curl -sLX GET "$plex_url/library/sections" -H "X-Plex-Token: $toke
 
 for arg in "$@"
 do
-    parsed_arg="${arg//\\}"
-    echo $parsed_arg
+    # POSIX-compliant way to remove backslashes
+    parsed_arg=$(echo "$arg" | tr -d '\\')
+    echo "$parsed_arg"
     modified_arg="$zurg_mount/$parsed_arg"
     echo "Detected update on: $arg"
     echo "Absolute path: $modified_arg"
@@ -25,11 +26,8 @@ do
     for section_id in $section_ids
     do
         echo "Section ID: $section_id"
-
-        curl -G -H "X-Plex-Token: $token" --data-urlencode "path=$modified_arg" $plex_url/library/sections/$section_id/refresh
+        curl -G -H "X-Plex-Token: $token" --data-urlencode "path=$modified_arg" "$plex_url/library/sections/$section_id/refresh"
     done
 done
 
 echo "All updated sections refreshed"
-
-# credits to godver3, wasabipls
