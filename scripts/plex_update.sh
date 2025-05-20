@@ -16,8 +16,8 @@ section_ids=$(curl -sLX GET "$plex_url/library/sections" -H "X-Plex-Token: $toke
 
 for arg in "$@"
 do
-    # POSIX-compliant way to remove backslashes
-    parsed_arg=$(echo "$arg" | tr -d '\\')
+    # POSIX-compliant way to remove backslashes (using printf + tr instead of Bash substitution)
+    parsed_arg=$(printf '%s' "$arg" | tr -d '\\')
     echo "$parsed_arg"
     modified_arg="$zurg_mount/$parsed_arg"
     echo "Detected update on: $arg"
