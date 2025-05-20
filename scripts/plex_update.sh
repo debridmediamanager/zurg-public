@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # PLEX PARTIAL SCAN script or PLEX UPDATE script
 # When zurg detects changes, it can trigger this script IF your config.yml contains
