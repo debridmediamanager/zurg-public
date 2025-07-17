@@ -80,9 +80,19 @@ Use "zurg [command] --help" for more information about a command.
 - [@funkypenguin](https://github.com/funkypenguin) - ["Infinite streaming" from Real Debrid with Plex](https://elfhosted.com/guides/media/stream-from-real-debrid-with-plex/) (ElfHosted)
 - [u/TimeyWimeyInsaan](https://www.reddit.com/user/TimeyWimeyInsaan/) - [A Newbie guide for Plex+Real-Debrid using Zurg & Rclone](https://docs.google.com/document/d/114URAz5h5jarpo1xz4GyFUzRzoBnOKVQPxH0-2R5KC8/view)
 
-## Service Providers
+## Easy Mode (ElfHosted)
 
-- [ElfHosted](https://elfhosted.com) - Easy, [open source](https://elfhosted.com/open/), Kubernetes / GitOps driven hosting of popular self-hosted apps - tested, tightly integrated, and secured. Apps start at $0.05/day, and new accounts get $10 credit, no commitment.
+❤️ Zurg is proudly sponsored by ElfHosted (*along with many more excellent [open-source projects](https://docs.elfhosted.com/sponsorship/)*!), and underpins the [Zurgling streaming bundle](https://store.elfhosted.com/product/zurgling) (*a hosted instance of sponsored Zurg and Plex, ready to stream from RealDebrid*), among [other bundles](https://store.elfhosted.com/product-category/streaming-bundles).
+
+### What is ElfHosted?
+
+[ElfHosted](https://store.elfhosted.com) is "easy mode" for self-hosting - an [open-source](https://docs.elfhosted.com/open/) PaaS which runs runs over 100 popular self-hostable apps for you, reliably and securely. They take responsibility for the painful stuff (*hardware, security, configuration, automation and updates*), so you sit back and enjoy the fun stuff! (*actually **using** your applications!*)
+
+Popular [streaming bundles](https://store.elfhosted.com/product-category/streaming-bundles) are available with Plex, Jellyfin, or Emby, integrated with cloud storage like RealDebrid, Premiumize, etc, and tooled with heavy-hitters such as Radarr/Sonarr, [Pulsarr](https://store.elfhosted.com/product/pulsarr/) (*hello!*), Riven, [Stremio Addons](https://store.elfhosted.com/product-category/stremio-addons) and [more](https://store.elfhosted.com/product-category/apps).
+
+ElfHosted have an ["excellent" ⭐️⭐️⭐️⭐️⭐️ rating on TrustPilot](https://www.trustpilot.com/review/elfhosted.com), a well-moderated [Discord](https://discord.elfhosted.com) community (*[highly praised](https://docs.elfhosted.com/testimonials/) for support and friendliness*), and [comprehensive documentation and guides](https://docs.elfhosted.com) resource.
+
+Grab a [7-day trial for only $1](https://store.elfhosted.com), and experience ElfHosted for yourself! 🎉
 
 ## Please read our [wiki](https://github.com/debridmediamanager/zurg-testing/wiki) for more information!
 
