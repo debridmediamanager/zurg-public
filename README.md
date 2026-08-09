@@ -97,10 +97,6 @@ Use "zurg [command] --help" for more information about a command.
 
 Windows needs WinFsp and one extra rclone flag. See [WINDOWS.md](WINDOWS.md).
 
-## Service Providers
-
-- [ElfHosted](https://elfhosted.com) - Easy, [open source](https://elfhosted.com/open/), Kubernetes / GitOps driven hosting of popular self-hosted apps - tested, tightly integrated, and secured. Apps start at $0.05/day, and new accounts get $10 credit, no commitment.
-
 ## Please read our [wiki](https://github.com/debridmediamanager/zurg-public/wiki) for more information!
 
 ## [zurg's version history](https://github.com/debridmediamanager/zurg-public/wiki/History)
