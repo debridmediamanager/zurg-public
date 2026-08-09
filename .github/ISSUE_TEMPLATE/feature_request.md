@@ -33,4 +33,4 @@ Discuss any potential impacts this feature might have on existing functionality.
 **Preferred Timeline**
 If you have a timeline in mind for when you'd like to see this feature implemented, please share it.
 
-Remember to follow our contribution guidelines and code of conduct when submitting your request.
+Before opening a request, please check the [wiki](https://github.com/debridmediamanager/zurg-public/wiki) and the existing issues — and note that nightly builds are usually ahead of the public release, so the feature may already exist there.

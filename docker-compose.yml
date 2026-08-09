@@ -1,16 +1,24 @@
-version: '3.8'
-
 services:
   zurg:
-    image: ghcr.io/debridmediamanager/zurg-testing:latest    
+    image: ghcr.io/debridmediamanager/zurg-public:latest
     container_name: zurg
     restart: unless-stopped
+    healthcheck:
+      test: curl -f localhost:9999/http/version.txt || exit 1
+      interval: 10s
+      timeout: 10s
+      start_period: 60s
+      retries: 1000
     ports:
       - 9999:9999
     volumes:
       - ./scripts/plex_update.sh:/app/plex_update.sh
       - ./config.yml:/app/config.yml
       - zurgdata:/app/data
+    # Instead of mounting config.yml you can drop it and set your token here;
+    # zurg writes a default config on first run.
+    # environment:
+    #   - TOKEN=YOUR_RD_API_TOKEN_HERE
 
   rclone:
     image: rclone/rclone:latest
@@ -30,7 +38,8 @@ services:
     devices:
       - /dev/fuse:/dev/fuse:rwm
     depends_on:
-      - zurg
+      zurg:
+        condition: service_healthy
     command: "mount zurg: /data --allow-other --allow-non-empty --dir-cache-time 10s --vfs-cache-mode full"
 
 volumes:

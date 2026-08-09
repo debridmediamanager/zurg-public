@@ -18,7 +18,7 @@ function UrlEncode($value) {
 }
  
 # Example path to a log - EDIT BELOW
-Start-Transcript -Path "C:\Path\To\zurg-testing\logs\plex_update.log"
+Start-Transcript -Path "C:\Path\To\zurg\logs\plex_update.log"
  
 # Function to trigger library update for a specific folder
 function UpdateFolder($retries) {

@@ -5,23 +5,32 @@ token: yourtoken
 # username:
 # password:
 # proxy:
-# concurrent_workers: 20
 check_for_changes_every_secs: 10
 # repair_every_mins: 60
 # ignore_renames: false
 # retain_rd_torrent_name: false
 # retain_folder_name_extension: false
 enable_repair: true
-auto_delete_rar_torrents: true
-# api_timeout_secs: 15
-# download_timeout_secs: 10
-# enable_download_mount: false
-# rate_limit_sleep_secs: 6
+# api_timeout_secs: 60
+# download_timeout_secs: 15
 # retries_until_failed: 2
-# network_buffer_size: 4194304 # 4MB
-# serve_from_rclone: false
-# verify_download_link: false
 # force_ipv6: false
+# get_downloads_limit: 1000
+# delete_error_torrents: true
+# force_select_playable_files: true
+# addl_playable_extensions:
+#   - m4b
+# serve_strm_files: false
+# save_strm_files: false
+
+# Where rclone mounts the library. Must match what Plex sees.
+# Defaults per-OS when unset: /mnt/zurg (Linux), /Volumes/Zurg (macOS), Z: (Windows)
+mount_path: "/mnt/zurg"
+# The bundled docker-compose.yml runs rclone as its own container, so zurg's
+# built-in mount supervision stays off (the default). Set this to true only if
+# you want zurg to spawn and manage rclone itself instead.
+# rclone_enabled: true
+
 on_library_update: sh plex_update.sh "$@"
 #for windows comment the line above and uncomment the line below:
 #on_library_update: '& powershell -ExecutionPolicy Bypass -File .\plex_update.ps1 --% "$args"'

@@ -26,16 +26,13 @@ Are you using Docker, or are you using Zurg's binary?
 If Docker, please include your `docker-compose.yml`.
 If Zurg's binary, specify the version by running `./zurg version`
 
-**Logs**
-Upload your logs by going to http://ZURGIP:9999/logs/upload and paste the link here
+**Logs and configuration**
+Go to http://ZURGIP:9999/debug/upload and paste the two links here. That uploads your logs and your config with the token, username, password and download links already redacted, so it is safe to share.
 
 If you are running it in Docker, your container logs will also help.
 
 **Rclone Configuration**
-Attach or detail your `rclone.conf`.
-
-**Zurg Configuration**
-Include your config.yaml or any other relevant configuration files.
+Attach or detail your `rclone.conf` — remove any password/bearer token first.
 
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
