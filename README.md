@@ -20,16 +20,25 @@ The current release, and what this repository documents.
 [Download the binary](https://github.com/debridmediamanager/zurg-public/releases) or use docker
 
 ```sh
-docker pull ghcr.io/debridmediamanager/zurg-public:latest
+docker pull ghcr.io/debridmediamanager/zurg-testing:latest
 # or pin the release
-docker pull ghcr.io/debridmediamanager/zurg-public:v1.0.0
+docker pull ghcr.io/debridmediamanager/zurg-testing:v1.0.0
 ```
 
-> Already running the old `ghcr.io/debridmediamanager/zurg-testing` image? It still receives stable releases, so nothing breaks — but `zurg-public` is the name going forward.
+> The image name is still `zurg-testing`, from before this repository was renamed to `zurg-public`. It is the current and correct image for stable releases, and `:latest` on it always points at the newest one.
 
 ### Nightly (Sponsors only)
 
 Date-stamped nightlies — `YYYY.MM.DD.HHMM-nightly` — carrying work that has not landed in a stable release yet, including backends beyond Real-Debrid (TorBox, AllDebrid and Usenet).
+
+Nightlies need an **active sponsorship** on [GitHub Sponsors](https://github.com/sponsors/debridmediamanager) or [Patreon](https://www.patreon.com/debridmediamanager), linked to the GitHub account that should receive access:
+
+1. Sponsor on GitHub Sponsors or Patreon.
+2. Go to [gatekeeper.debridmediamanager.com](https://gatekeeper.debridmediamanager.com/) and press **Connect GitHub Account** — that account is the one granted access.
+3. Sponsoring through Patreon? Press **Connect Patreon Account** too, so the pledge can be matched to you. GitHub sponsors need no second link.
+4. Press **Complete Registration**.
+
+Sponsoring on Patreon and stopping there grants nothing, because a pledge on its own cannot say which GitHub account is yours. Until access is granted the private repo answers **404** rather than a permission error, which is what a private repo looks like to an account that cannot see it — not a broken link. Access is removed again if the sponsorship lapses.
 
 [Download the binary](https://github.com/debridmediamanager/zurg/releases) or use docker
 
