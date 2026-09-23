@@ -6,7 +6,7 @@ This repository holds the public release and the quick-start bundle — `config.
 
 ## Requirements
 
-- A [Real-Debrid](http://real-debrid.com/?id=440161) account and [API token](http://real-debrid.com/?id=440161)
+- A [Real-Debrid](http://real-debrid.com/?id=3290031) account and [API token](http://real-debrid.com/?id=3290031)
 - `rclone` and `ffprobe` are **automatically downloaded** on first run if not already installed
 
 ## Download
