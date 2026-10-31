@@ -41,7 +41,7 @@ docker pull ghcr.io/debridmediamanager/zurg-public:v1.0.0
 
 ### Nightly (Sponsors only)
 
-Date-stamped nightlies — `YYYY.MM.DD.HHMM-nightly` — carrying work that has not landed in a stable release yet, including backends beyond Real-Debrid (TorBox, AllDebrid and Usenet).
+Date-stamped nightlies — `YYYY.MM.DD.HHMM-nightly` — carrying work that has not landed in a stable release yet, including backends beyond Real-Debrid (TorBox, AllDebrid, Premiumize, Debrid-Link, Offcloud and Usenet).
 
 Nightlies need an **active sponsorship** on [GitHub Sponsors](https://github.com/sponsors/debridmediamanager) or [Patreon](https://www.patreon.com/debridmediamanager), linked to the GitHub account that should receive access:
 
