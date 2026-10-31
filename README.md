@@ -43,18 +43,17 @@ docker pull ghcr.io/debridmediamanager/zurg-public:v1.0.0
 
 Date-stamped nightlies — `YYYY.MM.DD.HHMM-nightly` — carrying work that has not landed in a stable release yet, including backends beyond Real-Debrid (TorBox, AllDebrid, Premiumize, Debrid-Link, Offcloud and Usenet).
 
-Nightlies need an **active sponsorship** on [GitHub Sponsors](https://github.com/sponsors/debridmediamanager) or [Patreon](https://www.patreon.com/debridmediamanager), linked to the GitHub account that should receive access:
+Nightlies need an **active sponsorship**. Start at [gatekeeper](https://gatekeeper.debridmediamanager.com/):
 
-1. Sponsor on GitHub Sponsors or Patreon.
-2. Go to [gatekeeper.debridmediamanager.com](https://gatekeeper.debridmediamanager.com/) and press **Connect GitHub Account** — that account is the one granted access.
-3. Sponsoring through Patreon? Press **Connect Patreon Account** too, so the pledge can be matched to you. GitHub sponsors need no second link.
-4. Press **Complete Registration**.
+1. Press **Connect GitHub**. That account is the one granted access.
+2. Pay by card there, or sponsor on GitHub Sponsors or Patreon. Sponsoring through Patreon? Press **Connect Patreon Account** too, so the pledge can be matched to you.
+3. Press **Complete Registration**.
 
 Sponsoring on Patreon and stopping there grants nothing, because a pledge on its own cannot say which GitHub account is yours. Until access is granted the private repo answers **404** rather than a permission error, which is what a private repo looks like to an account that cannot see it — not a broken link. Access is removed again if the sponsorship lapses.
 
 [Download the binary](https://github.com/debridmediamanager/zurg/releases) or use docker
 
-Instructions on [HOW TO PULL THE PRIVATE DOCKER IMAGE](https://www.patreon.com/posts/guide-to-pulling-105779285)
+Pulling the private Docker image is step 1 of the [Docker guide](https://notes.debridmediamanager.com/zurg/setup/docker/#1-install-docker-and-unlock-the-image).
 
 ```sh
 docker pull ghcr.io/debridmediamanager/zurg:latest
@@ -67,6 +66,8 @@ docker pull ghcr.io/debridmediamanager/zurg:latest
 3. `sudo mkdir -p /mnt/zurg`
 4. Run `docker compose up -d`
 5. `time ls -1R /mnt/zurg` You're done! If you do edits on your config.yml just do `docker compose restart zurg`.
+
+Stuck? Ask in the **zurg-support** forum on [Discord](https://discord.com/invite/7u4YjMThXP).
 
 A web server is now running at `localhost:9999`, with the dashboard at `localhost:9999/config/`.
 
