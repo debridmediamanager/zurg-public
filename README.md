@@ -1,6 +1,18 @@
-# zurg
+<h1 align="center">zurg</h1>
 
-A self-hosted Real-Debrid webdav server written from scratch. Together with [rclone](https://rclone.org/) it can mount your Real-Debrid torrent library into your file system like Dropbox. It's meant to be used with Infuse (webdav server) and Plex (mount zurg webdav with rclone).
+<p align="center"><b>Every debrid account and Usenet in one folder.</b></p>
+
+<p align="center">
+  <a href="https://zurg.debridmediamanager.com/">Website</a> ·
+  <a href="https://github.com/debridmediamanager/zurg-public/releases">Download</a> ·
+  <a href="https://notes.debridmediamanager.com/zurg/">Docs</a> ·
+  <a href="https://discord.com/invite/7u4YjMThXP">Discord</a> ·
+  <a href="https://gatekeeper.debridmediamanager.com/">Sponsor</a>
+</p>
+
+This is zurg's public stable release. It is Real-Debrid only. The sponsor nightlies add TorBox, AllDebrid, Premiumize, Debrid-Link, Offcloud and Usenet in the same folder. [The website](https://zurg.debridmediamanager.com/) shows what they do.
+
+zurg is a self-hosted Real-Debrid WebDAV server written from scratch. Together with [rclone](https://rclone.org/) it mounts your Real-Debrid torrent library into your file system like Dropbox. Infuse reads it directly and Plex reads the rclone mount.
 
 This repository holds the public release and the quick-start bundle — `config.yml`, `docker-compose.yml`, `rclone.conf` and the Plex update scripts. The binaries live under [Releases](https://github.com/debridmediamanager/zurg-public/releases).
 
@@ -20,12 +32,12 @@ The current release, and what this repository documents.
 [Download the binary](https://github.com/debridmediamanager/zurg-public/releases) or use docker
 
 ```sh
-docker pull ghcr.io/debridmediamanager/zurg-testing:latest
+docker pull ghcr.io/debridmediamanager/zurg-public:latest
 # or pin the release
-docker pull ghcr.io/debridmediamanager/zurg-testing:v1.0.0
+docker pull ghcr.io/debridmediamanager/zurg-public:v1.0.0
 ```
 
-> The image name is still `zurg-testing`, from before this repository was renamed to `zurg-public`. It is the current and correct image for stable releases, and `:latest` on it always points at the newest one.
+> The same build is also pushed to the old `zurg-testing` name, byte for byte, so existing installs keep pulling without a compose edit. New installs should use `zurg-public`.
 
 ### Nightly (Sponsors only)
 
@@ -109,3 +121,7 @@ Windows needs WinFsp and one extra rclone flag. See [WINDOWS.md](WINDOWS.md).
 ## Please read our [wiki](https://github.com/debridmediamanager/zurg-public/wiki) for more information!
 
 ## [zurg's version history](https://github.com/debridmediamanager/zurg-public/wiki/History)
+
+---
+
+**More from DMM:** [Debrid Media Manager](https://debridmediamanager.com/) · [zurg](https://zurg.debridmediamanager.com/) · [rex](https://rex.debridmediamanager.com/) · [Docs](https://notes.debridmediamanager.com/) · [Sponsor](https://gatekeeper.debridmediamanager.com/) · [Discord](https://discord.com/invite/7u4YjMThXP) · [Reddit](https://www.reddit.com/r/debridmediamanager/)
