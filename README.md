@@ -51,6 +51,8 @@ Nightlies need an **active sponsorship**. Start at [gatekeeper](https://gatekeep
 
 Sponsoring on Patreon and stopping there grants nothing, because a pledge on its own cannot say which GitHub account is yours. Until access is granted the private repo answers **404** rather than a permission error, which is what a private repo looks like to an account that cannot see it — not a broken link. Access is removed again if the sponsorship lapses.
 
+The same sponsorship opens DMM's sponsor features too, like the wanted list that zurg fetches for you, DMM as an indexer for Sonarr and Radarr, and the Jellyfin and Emby plugins. [What a sponsorship gives you](https://notes.debridmediamanager.com/guides/sponsorship/) lists every one.
+
 [Download the binary](https://github.com/debridmediamanager/zurg/releases) or use docker
 
 Pulling the private Docker image is step 1 of the [Docker guide](https://notes.debridmediamanager.com/zurg/setup/docker/#1-install-docker-and-unlock-the-image).
