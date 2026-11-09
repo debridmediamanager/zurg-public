@@ -10,11 +10,11 @@
   <a href="https://gatekeeper.debridmediamanager.com/">Sponsor</a>
 </p>
 
-This is zurg's public stable release. It is Real-Debrid only. The sponsor nightlies add TorBox, AllDebrid, Premiumize, Debrid-Link, Offcloud and Usenet in the same folder. [The website](https://zurg.debridmediamanager.com/) shows what they do.
+This is zurg's public stable release for Real-Debrid. Sponsor nightlies add TorBox, AllDebrid, Premiumize, Debrid-Link, Offcloud and Usenet. [The website](https://zurg.debridmediamanager.com/) shows the options.
 
-zurg is a self-hosted Real-Debrid WebDAV server written from scratch. Together with [rclone](https://rclone.org/) it mounts your Real-Debrid torrent library into your file system like Dropbox. Infuse reads it directly and Plex reads the rclone mount.
+zurg serves your Real-Debrid library over WebDAV. [rclone](https://rclone.org/) mounts it so Plex can read it. Infuse can read WebDAV directly.
 
-This repository holds the public release and the quick-start bundle — `config.yml`, `docker-compose.yml`, `rclone.conf` and the Plex update scripts. The binaries live under [Releases](https://github.com/debridmediamanager/zurg-public/releases).
+This repository holds the public release and its quick-start files: `config.yml`, `docker-compose.yml`, `rclone.conf` and Plex update scripts. Download binaries from [Releases](https://github.com/debridmediamanager/zurg-public/releases).
 
 ## Requirements
 
@@ -27,7 +27,7 @@ This repository holds the public release and the quick-start bundle — `config.
 
 ### Stable version: v1.0.0 (Public)
 
-The current release, and what this repository documents.
+This repository documents the current release.
 
 [Download the binary](https://github.com/debridmediamanager/zurg-public/releases) or use docker
 
@@ -41,17 +41,17 @@ docker pull ghcr.io/debridmediamanager/zurg-public:v1.0.0
 
 ### Nightly (Sponsors only)
 
-Date-stamped nightlies — `YYYY.MM.DD.HHMM-nightly` — carrying work that has not landed in a stable release yet, including backends beyond Real-Debrid (TorBox, AllDebrid, Premiumize, Debrid-Link, Offcloud and Usenet).
+Date-stamped nightlies use `YYYY.MM.DD.HHMM-nightly`. They add backends beyond Real-Debrid including TorBox, AllDebrid, Premiumize, Debrid-Link, Offcloud and Usenet.
 
 Nightlies need an **active sponsorship**. Start at [gatekeeper](https://gatekeeper.debridmediamanager.com/):
 
-1. Press **Connect GitHub**. That account is the one granted access.
-2. Pay by card there, or sponsor on GitHub Sponsors or Patreon. Sponsoring through Patreon? Press **Connect Patreon Account** too, so the pledge can be matched to you.
-3. Press **Complete Registration**.
+1. Press **Connect GitHub**. That account gets access.
+2. Pay there or sponsor on GitHub Sponsors or Patreon. For Patreon also press **Connect Patreon** so the pledge can be matched.
+3. Press **Register**.
 
-Sponsoring on Patreon and stopping there grants nothing, because a pledge on its own cannot say which GitHub account is yours. Until access is granted the private repo answers **404** rather than a permission error, which is what a private repo looks like to an account that cannot see it — not a broken link. Access is removed again if the sponsorship lapses.
+Patreon alone grants no access because it cannot identify your GitHub account. Until access is granted the private repo answers **404**. Access ends when the sponsorship lapses.
 
-The same sponsorship opens DMM's sponsor features too, like the wanted list that zurg fetches for you, DMM as an indexer for Sonarr and Radarr, and the Jellyfin and Emby plugins. [What a sponsorship gives you](https://notes.debridmediamanager.com/guides/sponsorship/) lists every one.
+The same sponsorship opens DMM's sponsor features including the wanted list that zurg fetches for you and the Jellyfin and Emby plugins. [What a sponsorship gives you](https://notes.debridmediamanager.com/guides/sponsorship/) lists every perk.
 
 [Download the binary](https://github.com/debridmediamanager/zurg/releases) or use docker
 
@@ -63,11 +63,13 @@ docker pull ghcr.io/debridmediamanager/zurg:latest
 
 ## How to run zurg in 5 steps for Plex with Docker
 
-1. Clone the repo `git clone https://github.com/debridmediamanager/zurg-public.git`
-2. Add your token in `config.yml`
-3. `sudo mkdir -p /mnt/zurg`
-4. Run `docker compose up -d`
-5. `time ls -1R /mnt/zurg` You're done! If you do edits on your config.yml just do `docker compose restart zurg`.
+1. Clone the repo and enter it with `git clone https://github.com/debridmediamanager/zurg-public.git && cd zurg-public`
+2. Add your token to `config.yml`
+3. Create the mount with `sudo mkdir -p /mnt/zurg`
+4. Start zurg with `docker compose up -d`
+5. Check the mount with `time ls -1R /mnt/zurg`
+
+After a config change run `docker compose restart zurg`.
 
 Stuck? Ask in the **zurg-support** forum on [Discord](https://discord.com/invite/7u4YjMThXP).
 
@@ -75,7 +77,7 @@ A web server is now running at `localhost:9999`, with the dashboard at `localhos
 
 ### Binary
 
-Download the binary, run it, and zurg handles the rest — it auto-creates a default config and downloads `ffprobe` and `rclone` for you.
+Download the binary and run it. zurg creates a config and downloads `ffprobe` and `rclone` when needed.
 
 ```bash
 ./zurg                           # creates config.yml, downloads bin/ffprobe + bin/rclone
@@ -110,12 +112,13 @@ Flags:
 Use "zurg [command] --help" for more information about a command.
 ```
 
-## Why zurg? Why not X?
+<a id="why-zurg-why-not-x"></a>
 
-- Better performance than anything out there; changes in your library appear instantly ([assuming Plex picks it up fast enough](./scripts/plex_update.sh))
-- You can configure a flexible directory structure in `config.yml`, filtering torrents by name, file contents, size, age and more. [Need help?](https://github.com/debridmediamanager/zurg-public/wiki/Config)
-- If you've ever experienced Plex scanner being stuck on a file and thereby freezing Plex completely, it should not happen anymore because zurg does a comprehensive check if a torrent is dead or not. You can run `ps aux --sort=-time | grep "Plex Media Scanner"` to check for stuck scanner processes.
-- zurg guarantees that your library is **always available** because of its repair abilities! Dead links are detected on-demand when content is accessed and automatically repaired — no background polling of the RD API required.
+## What it does
+
+- Library changes appear quickly when Plex picks them up ([details](./scripts/plex_update.sh)).
+- `config.yml` can filter directories by name and file content. [Need help?](https://github.com/debridmediamanager/zurg-public/wiki/Config)
+- Dead links are checked when a file is opened and repaired when possible.
 
 ## Windows
 
